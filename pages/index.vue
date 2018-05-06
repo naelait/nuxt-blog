@@ -1,59 +1,73 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        nuxt-blog
-      </h1>
-      <h2 class="subtitle">
-        My superb Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+  <div class="home-page">
+    <section class="intro">
+      <h1>Get the latest tech news !</h1>
+    </section>
+    <section class="featured-posts">
+      <PostPreview 
+      id="1"
+      thumbnail="https://i1.wp.com/www.insider-trends.com/wp-content/uploads/2016/11/Top-50-retail-tech-startups-in-world-01.jpeg"
+      title="Hello There"
+      previewText="This is a post !"/>
+      <PostPreview 
+      id="2"
+      thumbnail="https://i1.wp.com/www.insider-trends.com/wp-content/uploads/2016/11/Top-50-retail-tech-startups-in-world-01.jpeg"
+      title="Hello There second time"
+      previewText="This is my second post !"/>
+      <PostPreview 
+      id="3"
+      thumbnail="https://i1.wp.com/www.insider-trends.com/wp-content/uploads/2016/11/Top-50-retail-tech-startups-in-world-01.jpeg"
+      title="Hello There third time"
+      previewText="This is my third post !"/>
+    </section>
+  </div>
 </template>
-
 <script>
-import Logo from '~/components/Logo.vue'
+import PostPreview from "~/components/Posts/PostPreview";
 
 export default {
   components: {
-    Logo
+    PostPreview
+  }
+};
+</script>
+<style scoped>
+.intro {
+  height: 300px;
+  position: relative;
+  padding: 30px;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: cover;
+}
+
+.intro h1 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  font-size: 1.5rem;
+  color: black;
+  background-color: rgb(211, 211, 211);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px black;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+@media (min-width: 768px) {
+  .intro h1 {
+    font-size: 2rem;
   }
 }
-</script>
 
-<style>
-.container
-{
-  min-height: 100vh;
+.featured-posts {
   display: flex;
-  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
   align-items: center;
-  text-align: center;
-}
-.title
-{
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-.subtitle
-{
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-.links
-{
-  padding-top: 15px;
+  justify-content: center;
 }
 </style>
