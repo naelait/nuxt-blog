@@ -3,31 +3,37 @@
     <section class="intro">
       <h1>Get the latest tech news !</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview
-      id="1"
-      thumbnail="https://i1.wp.com/www.insider-trends.com/wp-content/uploads/2016/11/Top-50-retail-tech-startups-in-world-01.jpeg"
-      title="Hello There"
-      previewText="This is a post !"/>
-      <PostPreview
-      id="2"
-      thumbnail="https://i1.wp.com/www.insider-trends.com/wp-content/uploads/2016/11/Top-50-retail-tech-startups-in-world-01.jpeg"
-      title="Hello There second time"
-      previewText="This is my second post !"/>
-      <PostPreview
-      id="3"
-      thumbnail="https://i1.wp.com/www.insider-trends.com/wp-content/uploads/2016/11/Top-50-retail-tech-startups-in-world-01.jpeg"
-      title="Hello There third time"
-      previewText="This is my third post !"/>
-    </section>
+    <PostList :posts="loadedPosts"></PostList>
   </div>
 </template>
 <script>
-import PostPreview from "~/components/Posts/PostPreview";
+import PostList from "@/components/Posts/PostList";
 
 export default {
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: [
+          {
+            id: "1",
+            title: "first Post",
+            previewText: "This is our first post !",
+            thumbnail:
+              "https://i1.wp.com/www.insider-trends.com/wp-content/uploads/2016/11/Top-50-retail-tech-startups-in-world-01.jpeg"
+          },
+          {
+            id: "2",
+            title: "second Post",
+            previewText: "This is our second post !",
+            thumbnail:
+              "https://i1.wp.com/www.insider-trends.com/wp-content/uploads/2016/11/Top-50-retail-tech-startups-in-world-01.jpeg"
+          }
+        ]
+      });
+    }, 1500);
+  },
   components: {
-    PostPreview
+    PostList
   }
 };
 </script>
@@ -61,14 +67,5 @@ export default {
   .intro h1 {
     font-size: 2rem;
   }
-}
-
-.featured-posts {
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
 }
 </style>
