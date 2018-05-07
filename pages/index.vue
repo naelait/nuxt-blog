@@ -4,17 +4,17 @@
       <h1>Get the latest tech news !</h1>
     </section>
     <section class="featured-posts">
-      <PostPreview 
+      <PostPreview
       id="1"
       thumbnail="https://i1.wp.com/www.insider-trends.com/wp-content/uploads/2016/11/Top-50-retail-tech-startups-in-world-01.jpeg"
       title="Hello There"
       previewText="This is a post !"/>
-      <PostPreview 
+      <PostPreview
       id="2"
       thumbnail="https://i1.wp.com/www.insider-trends.com/wp-content/uploads/2016/11/Top-50-retail-tech-startups-in-world-01.jpeg"
       title="Hello There second time"
       previewText="This is my second post !"/>
-      <PostPreview 
+      <PostPreview
       id="3"
       thumbnail="https://i1.wp.com/www.insider-trends.com/wp-content/uploads/2016/11/Top-50-retail-tech-startups-in-world-01.jpeg"
       title="Hello There third time"
@@ -36,6 +36,7 @@ export default {
   height: 300px;
   position: relative;
   padding: 30px;
+  background-image: url("~assets/images/background.jpg");
   box-sizing: border-box;
   background-position: center;
   background-size: cover;
